@@ -82,6 +82,7 @@ set novb
 
 "Key Map Config
 map nn :NewTemplateTab html<cr> "从模板建立HTML文件，详见：http://www.gracecode.com/archives/2414/
+map ca :Calendar<cr>            "需要安装Calender插件
 
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
@@ -107,6 +108,13 @@ nmap <silent> <F2> <ESC>:call ToggleHighLightSearch()<cr>
 nmap <leader>ts :silent! :%s/\t/ /g<cr>
 nmap <leader>gbk :set fenc=gbk<cr>,w
 nmap <leader>utf8 :set frnc=utf-8<cr>,w
+
+"Vim Wiki
+if has("win32")
+    let $VIMFILES=$VIM.'/vimfiles'
+else
+    let $VIMFILES=$VIM.'/.vim'
+endif
 
 
 "Function Definitions
