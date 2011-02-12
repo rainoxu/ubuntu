@@ -1,9 +1,24 @@
 " RainoXu   <tblonggang@gmail.com>
 " Homepage  <http://www.rainoxu.com>
 
+"General
+if (v:version < 700)
+    echoerr 'This _vimrc requires Vim 7 or later.'
+    quit
+endif
+
+func! GetPWD()
+    retur substitute(getcwd(), "", "", "g")
+endfunc
+
+func! GetDateStamp()
+    return strftime('%Y-%m-%d')
+endfunc
+
 
 "Editor Config
 if &cp | set nocp | endif
+set history=500
 set nobackup
 set noswapfile
 set go=
@@ -17,10 +32,14 @@ language message en_US.utf-8
 so $VIMRUNTIME/delmenu.vim
 so $VIMRUNTIME/menu.vim
 
+set showcmd
 set wildmenu
 set wildmode=list:longest,full
 set ruler
+set rulerformat=%15(%c%V\ %p%%%)
 set cursorline
+
+set ls=2 
 
 color watermark
 "color lucius
@@ -81,12 +100,8 @@ set novb
 
 
 "Key Map Config
-map nn :NewTemplateTab html<cr> "从模板建立HTML文件，详见：http://www.gracecode.com/archives/2414/
-map ca :Calendar<cr>            "需要安装Calender插件
-
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
-inoremap <s-tab> <esc>V<s-tab>  "疑问
 nmap ,w :w!<cr>
 nmap ,sw :call SudoSave()<cr>
 vmap ,w <ESC>:w!<cr>
@@ -94,12 +109,13 @@ map H ^
 map L $
 nmap <c-s> :w<cr>
 map ,q :q!<cr>
-nmap <tab> <C-W>                "疑问
 imap <c-j> <c-n>
 imap <c-k> <c-p>
 nmap <c-t> :tabnew<cr>
-vmap <c-y>  "疑问
-vmap x "疑问
+inoremap <s-tab> <esc>V<s-tab>  "疑问
+vmap <c-y>                      "疑问
+vmap x                          "疑问
+nmap <tab> <C-W>                "疑问
 
 imap <c-s> <esc>:w<cr>li
 nmap <c-a> ggvG "为了让Linux也能使用ctrl+a
@@ -146,7 +162,26 @@ func! SudoSave()
     syn on
 endfunc
 
+" =============
+" Plugin Config
+" =============
 
-
-" 自动语法检查
+" 自动语法检查配置
 au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)
+
+" TagList 配置
+let Tlist_Use_Right_Window=1
+let Tlist_File_Fold_Auto_Close=1
+nmap tl :TlistToggle<cr>
+
+" 自动模板配置
+map nh :NewTemplateTab html<cr>
+map np :NewTemplateTab php<cr>
+map nj :NewTemplateTab javascript<cr>
+map nc :NewTemplateTab css<cr>
+
+
+" 日历配置
+map ca :Calendar<cr>            "需要安装Calender插件
+
+
