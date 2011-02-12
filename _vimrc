@@ -170,9 +170,15 @@ endfunc
 au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)
 
 " TagList 配置
+if has("win32")
+    let Tlist_Ctags_Cmd='ctags'
+endif
+
 let Tlist_Use_Right_Window=1
 let Tlist_File_Fold_Auto_Close=1
+let Tlist_Exit_OnlyWindow=1
 nmap tl :TlistToggle<cr>
+
 
 " 自动模板配置
 map nh :NewTemplateTab html<cr>
@@ -184,4 +190,5 @@ map nc :NewTemplateTab css<cr>
 " 日历配置
 map ca :Calendar<cr>            "需要安装Calender插件
 
-
+" NerdTree配置
+map nt :NERDTree<cr>
