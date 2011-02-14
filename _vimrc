@@ -199,4 +199,4 @@ map nc :NewTemplateTab css<cr>
 map ca :Calendar<cr>            "需要安装Calender插件
 
 " NerdTree配置
-map nt :NERDTree<cr>
+map nt :NERDTreeToggle<cr>
