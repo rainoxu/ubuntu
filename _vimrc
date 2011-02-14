@@ -19,7 +19,6 @@ endfunc
 "Editor Config
 if &cp | set nocp | endif
 set history=500
-set cmdheight=2
 set nobackup
 set noswapfile
 set go=
@@ -42,20 +41,20 @@ set cursorline
 
 set ls=2 
 
-"color watermark
-color lucius
+color watermark
+"color lucius
 
 set shortmess=atI
 
 if has("gui_running")
 	au GUIEnter * cd ~
 	
-	"ÔİÊ±×¢ÊÍµôĞĞÓëÁĞµÄ¹â±êÖ¸Ê¾¹¦ÄÜ
+	"æš‚æ—¶æ³¨é‡Šæ‰è¡Œä¸åˆ—çš„å…‰æ ‡æŒ‡ç¤ºåŠŸèƒ½
 	set cursorcolumn
 endif
 
 
-au! bufwritepost _vimrc source %    "±£´æ_vimrcºó£¬×Ô¶¯Ó¦ÓÃ×îĞÂµÄÅäÖÃ
+au! bufwritepost _vimrc source %    "ä¿å­˜_vimrcåï¼Œè‡ªåŠ¨åº”ç”¨æœ€æ–°çš„é…ç½®
 
 if has("win32")
 	"au! bufwritepost hosts call RefreshSystemDNS()
@@ -103,7 +102,7 @@ set novb
 "Key Map Config
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
-nmap ,w :w!<cr>li
+nmap ,w :w!<cr>
 nmap ,sw :call SudoSave()<cr>
 vmap ,w <ESC>:w!<cr>
 map H ^
@@ -113,18 +112,18 @@ map ,q :q!<cr>
 imap <c-j> <c-n>
 imap <c-k> <c-p>
 nmap <c-t> :tabnew<cr>
-inoremap <s-tab> <esc>V<s-tab>  "ÒÉÎÊ
-vmap <c-y>                      "ÒÉÎÊ
-vmap x                          "ÒÉÎÊ
-nmap <tab> <C-W>                "ÒÉÎÊ
+inoremap <s-tab> <esc>V<s-tab>  "ç–‘é—®
+vmap <c-y>                      "ç–‘é—®
+vmap x                          "ç–‘é—®
+nmap <tab> <C-W>                "ç–‘é—®
 
-imap <c-s> <esc>:w<cr>
-nmap <c-a> ggvG "ÎªÁËÈÃLinuxÒ²ÄÜÊ¹ÓÃctrl+a
+imap <c-s> <esc>:w<cr>li
+nmap <c-a> ggvG "ä¸ºäº†è®©Linuxä¹Ÿèƒ½ä½¿ç”¨ctrl+a
 nmap <silent> <F2> <ESC>:call ToggleHighLightSearch()<cr>
 
 nmap <leader>ts :silent! :%s/\t/ /g<cr>
 nmap <leader>gbk :set fenc=gbk<cr>,w
-nmap <leader>utf8 :set fenc=utf-8<cr>,w
+nmap <leader>utf8 :set frnc=utf-8<cr>,w
 
 " è·³è½¬åˆ°æœ€åçš„ä¿®æ”¹å¤„
 nmap sl `. 
@@ -175,11 +174,10 @@ endfunc
 " Plugin Config
 " =============
 
-" ×Ô¶¯Óï·¨¼ì²éÅäÖÃ
-"au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)
-let g:checksyntax_auto=0 " ²»×Ô¶¯¼ì²é
+" è‡ªåŠ¨è¯­æ³•æ£€æŸ¥é…ç½®
+au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)
 
-" TagList ÅäÖÃ
+" TagList é…ç½®
 if has("win32")
     let Tlist_Ctags_Cmd='ctags'
 endif
@@ -189,15 +187,16 @@ let Tlist_File_Fold_Auto_Close=1
 let Tlist_Exit_OnlyWindow=1
 nmap tl :TlistToggle<cr>
 
-" ×Ô¶¯Ä£°åÅäÖÃ
+
+" è‡ªåŠ¨æ¨¡æ¿é…ç½®
 map nh :NewTemplateTab html<cr>
 map np :NewTemplateTab php<cr>
 map nj :NewTemplateTab javascript<cr>
 map nc :NewTemplateTab css<cr>
 
-" ÈÕÀúÅäÖÃ
-map ca :Calendar<cr>            "ĞèÒª°²×°Calender²å¼ş
 
-" NerdTreeÅäÖÃ
-map nt :NERDTreeToggle<cr>
+" æ—¥å†é…ç½®
+map ca :Calendar<cr>            "éœ€è¦å®‰è£…Calenderæ’ä»¶
 
+" NerdTreeé…ç½®
+map nt :NERDTree<cr>
