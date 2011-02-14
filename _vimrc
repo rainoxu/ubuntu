@@ -126,17 +126,25 @@ nmap <leader>ts :silent! :%s/\t/ /g<cr>
 nmap <leader>gbk :set fenc=gbk<cr>,w
 nmap <leader>utf8 :set fenc=utf-8<cr>,w
 
-"Vim Wiki
+" 跳转到最后的修改处
+nmap sl `. 
+
+" Vim Wiki
 if has("win32")
     let $VIMFILES=$VIM.'/vimfiles'
 else
     let $VIMFILES=$VIM.'/.vim'
 endif
 
+let g:vimwiki_menu=''
+let g:vimwiki_hl_cb_checked=1
+let g:vimwiki_camel_case=0
+let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
+
 
 "Function Definitions
 func! ToggleHighLightSearch()
-    if &hls
+    if &hlsd
         set nohls
     else
         set hls
