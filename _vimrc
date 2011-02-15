@@ -42,14 +42,12 @@ set cursorline
 set ls=2 
 
 color watermark
-"color lucius
 
 set shortmess=atI
 
 if has("gui_running")
 	au GUIEnter * cd ~
 	
-	"暂时注释掉行与列的光标指示功能
 	set cursorcolumn
 endif
 
@@ -57,7 +55,7 @@ endif
 au! bufwritepost _vimrc source %    "保存_vimrc后，自动应用最新的配置
 
 if has("win32")
-	"au! bufwritepost hosts call RefreshSystemDNS()
+	au! bufwritepost hosts call RefreshSystemDNS()
 	"set guifont="Microsoft Yahei":h12:cANSI
 	"set guifontwide=NSimSun:h12
 	au GUIEnter * simalt ~x
