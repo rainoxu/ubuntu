@@ -141,7 +141,7 @@ let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
 
 "Function Definitions
 func! ToggleHighLightSearch()
-    if &hlsd
+    if &hls
         set nohls
     else
         set hls
