@@ -5,9 +5,9 @@
 "
 "功能说明:加入或删除注释//
 "映射和绑定
-nmap <C-m> <Esc>:Setcomment<CR>
-imap <C-m> <Esc>:Setcomment<CR>
-vmap <C-m> <Esc>:SetcommentV<CR>
+nmap cm <Esc>:Setcomment<CR>
+"imap <C-m> <Esc>:Setcomment<CR>
+vmap cm <Esc>:SetcommentV<CR>
 command! -nargs=0 Setcomment call s:SET_COMMENT()
 command! -nargs=0 SetcommentV call s:SET_COMMENTV()
 
