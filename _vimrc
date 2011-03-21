@@ -41,7 +41,7 @@ set cursorline
 
 set ls=2 
 
-color watermark
+color lucius 
 
 set shortmess=atI
 
@@ -79,7 +79,7 @@ augroup markdown
 augroup end
 
 "Code Config
-set nowrap
+"set nowrap
 set number
 set autoindent
 set smartindent
@@ -121,7 +121,7 @@ nmap <silent> <F2> <ESC>:call ToggleHighLightSearch()<cr>
 
 nmap <leader>ts :silent! :%s/\t/ /g<cr>
 nmap <leader>gbk :set fenc=gbk<cr>,w
-nmap <leader>utf8 :set frnc=utf-8<cr>,w
+nmap <leader>utf8 :set fenc=utf-8<cr>,w
 
 " 跳转到最后的修改处
 nmap sl `. 
