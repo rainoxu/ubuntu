@@ -116,7 +116,8 @@ vmap x                          "疑问
 nmap <tab> <C-W>                "疑问
 
 imap <c-s> <esc>:w<cr>li
-nmap <c-a> ggvG "为了让Linux也能使用ctrl+a
+"为了让Linux也能使用ctrl+a
+nmap <c-a> ggvG 
 nmap <silent> <F2> <ESC>:call ToggleHighLightSearch()<cr>
 
 nmap <leader>ts :silent! :%s/\t/ /g<cr>
