@@ -127,17 +127,51 @@ nmap <leader>utf8 :set fenc=utf-8<cr>,w
 " 跳转到最后的修改处
 nmap sl `. 
 
-" Vim Wiki
+" Vim Wiki 配置
 if has("win32")
     let $VIMFILES=$VIM.'/vimfiles'
 else
     let $VIMFILES=$VIM.'/.vim'
 endif
 
+map <S-F4> :VimwikiAll2HTML<cr>
+map <F4> :Vimwiki2HTML<cr>
+
 let g:vimwiki_menu=''
 let g:vimwiki_hl_cb_checked=1
 let g:vimwiki_camel_case=0
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1'
+let g:vimwiki_list= [{
+                    \'path': 'D:\my-wiki\show',
+                    \'path_html': '',
+                    \'path_header': '',
+                    \'path_footer': ''
+                    \}, {
+                    \'path': 'D:\my-wiki\javascript',
+                    \'path_html': '',
+                    \'path_header': '',
+                    \'path_footer': ''
+                    \}, {
+                    \'path': 'D:\my-wiki\linux',
+                    \'path_html': '',
+                    \'path_header': '',
+                    \'path_footer': ''
+                    \}, {
+                    \'path': 'D:\my-wiki\poster',
+                    \'path_html': '',
+                    \'path_header': '',
+                    \'path_footer': ''
+                    \}, {
+                    \'path': 'D:\my-wiki\sns',
+                    \'path_html': '',
+                    \'path_header': '',
+                    \'path_footer': ''
+                    \}, {
+                    \'path': 'D:\my-wiki\team',
+                    \'path_html': '',
+                    \'path_header': '',
+                    \'path_footer': ''
+                    \}]
 
 
 "Function Definitions
@@ -199,3 +233,6 @@ map ca :Calendar<cr>            "需要安装Calender插件
 
 " NerdTree配置
 map nt :NERDTreeToggle<cr>
+
+
+
