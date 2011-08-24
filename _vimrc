@@ -63,6 +63,7 @@ if has("win32")
 	nmap <leader><leader> :simalt ~x<cr>
 	nmap <leader>v :vsp $VIM./_vimrc<cr>
 	nmap <leader>h :vsp C:\windows\system32\drivers\etc\hosts<cr>
+    nmap <leader>m :vsp D:\xampp\htdocs\index.php<cr>
 endif
 
 
@@ -233,6 +234,3 @@ map ca :Calendar<cr>            "需要安装Calender插件
 
 " NerdTree配置
 map nt :NERDTreeToggle<cr>
-
-
-
