@@ -99,7 +99,12 @@ set shortmess=atI
 
 "主题包配置
 "==========
-color molokai
+if has("gui_running")
+    color molokai
+else
+    color dante
+end
+
 nmap <leader>c1 :colorscheme molokai<cr>
 nmap <leader>c2 :colorscheme dante<cr>
 nmap <leader>c3 :colorscheme vanzan_color<cr>
