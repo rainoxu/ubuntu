@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ln -s $(pwd)/.gvimrc ~/.vimrc
 echo "已将 $(pwd)/.gvimrc 复制到 ~/.vimrc"
 
