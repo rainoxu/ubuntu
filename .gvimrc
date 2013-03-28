@@ -23,8 +23,8 @@ au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)
 augroup markdown
 	au! Bufread,BufNewFile *.mkd set filetype mkd	
 	au! Bufread,BufNewFile *.mk set filetype mkd	
-	au! BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:&gt; filetype=mkd
-	au! BufRead *.md set ai formatoptions=tcroqn2 comments=n:&gt; filetype=mkd
+	au! BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:&gt; filetype=markdown
+	au! BufRead *.md set ai formatoptions=tcroqn2 comments=n:&gt; filetype=markdown
 augroup end
 
 
