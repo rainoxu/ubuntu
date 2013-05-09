@@ -55,7 +55,7 @@ endfunc
 map <F6> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     if &filetype == 'objc'
-        exec "!gcc `gnustep-config --objc-flags` -L /GNUstep/System/Library/Libraries % -o %:r -lgnustep-base -lobjc"
+        exec "!gcc `gnustep-config --objc-flags` -L /GNUstep/System/Library/Libraries % -o %:r -lgnustep-base -lobjc && ./%:r"
     endif
 endfunc
 
