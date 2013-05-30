@@ -57,9 +57,14 @@ func! NerdTreeToggle ()
 
     " 调用 NerdTree 命令显示它
     :NERDTreeToggle
-
 endfunc
 
+" 调用 GCC 编译 Objecitve-C
+func! CompileRunGcc()
+    if &filetype == 'objc'
+        exec "!gcc `gnustep-config --objc-flags` -L /GNUstep/System/Library/Libraries % -o %:r -lgnustep-base -lobjc && ./%:r"
+    endif
+endfunc
 
 "编辑器常用配置
 "==============
@@ -158,6 +163,9 @@ nmap sl `.
 
 "切换当前位置为打开文件所在的位置
 nmap lcd :lcd %:p:h<cr>
+
+" 调用 GCC 编译 Objective-C 的快捷配置
+map <F6> :call CompileRunGcc()<CR>
 
 "自动模板配置
 "============
