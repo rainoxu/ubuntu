@@ -17,7 +17,7 @@ endif
 au! bufwritepost .gvimrc source %
 
 "自动语法检查配置
-au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)
+"au BufWritePost,FileWritePost *.js,*.php call CheckSyntax(1)
 
 "Markdown文件处理，添加指定的filetype
 augroup markdown
@@ -49,6 +49,15 @@ func! ToggleHighLightSearch()
     else
         set hls
     endif
+endfunc
+
+func! NerdTreeToggle () 
+    " 切换到当前文件所在的目录
+    :lcd %:p:h
+
+    " 调用 NerdTree 命令显示它
+    :NERDTreeToggle
+
 endfunc
 
 
@@ -147,6 +156,8 @@ nmap <leader>ts :silent! :%s/\t/ /g<cr>
 "跳转到最后的修改处
 nmap sl `. 
 
+"切换当前位置为打开文件所在的位置
+nmap lcd :lcd %:p:h<cr>
 
 "自动模板配置
 "============
@@ -161,4 +172,4 @@ map nc :NewTemplateTab css<cr>
 map ca :Calendar<cr>
 
 "NerdTree插件
-map nt :NERDTreeToggle<cr>
+map nt :call NerdTreeToggle()<cr>
