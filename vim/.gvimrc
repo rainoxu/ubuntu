@@ -1,5 +1,5 @@
 " RainoXu   <tblonggang@gmail.com>
-" Homepage  <http://www.rainoxu.com>
+" Homepage  <http://www.longxiaogang.com>
 
 "常规检查
 "========
@@ -11,6 +11,7 @@ endif
 if has("gui_running")
 	au GUIEnter * cd ~
 	set cursorcolumn
+    set guifont=Monaco:h14
 endif
 
 "保存 gvimrc后，自动应用最新的配置
@@ -150,7 +151,8 @@ map ,q :q!<cr>
 nmap <c-t> :tabnew<cr>
 nmap <leader>gbk :set fenc=gbk<cr>,w
 nmap <leader>utf8 :set fenc=utf-8<cr>,w
-nmap <silent> <F2> <ESC>:call ToggleHighLightSearch()<cr>
+"nmap <silent> <F2> <ESC>:call ToggleHighLightSearch()<cr>
+nmap ff :call ToggleHighLightSearch()<cr>
 
 "让Linux也能使用ctrl+a
 nmap <c-a> gg^vG$
