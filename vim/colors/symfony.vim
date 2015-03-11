@@ -4,6 +4,7 @@
 " Version: 1.0.0
 " URL: http://www.axisym3.net/jdany/vim-the-editor/#symfony
 
+set t_Co=256
 highlight clear
 if exists("syntax_on")
  syntax reset
@@ -12,7 +13,7 @@ endif
 let g:colors_name = "symfony"
 set background=dark
 
-highlight Normal ctermfg=15 ctermbg=235 guifg=#ffffff guibg=#222222
+highlight Normal ctermfg=15 ctermbg=235 guifg=#ffffff guibg=#000000
 
 " Search
 highlight IncSearch ctermfg=0 ctermbg=226 guifg=#000000 guibg=#ffff00

@@ -14,6 +14,7 @@ if has("gui_running")
     set guifont=Monaco:h14
 endif
 
+
 "保存 gvimrc后，自动应用最新的配置
 au! bufwritepost .gvimrc source %
 
@@ -111,13 +112,18 @@ set cursorline
 set ls=2 
 set shortmess=atI
 
-
 "主题包配置
 "==========
 if has("gui_running")
     color molokai
 else
-    color dante
+    set t_Co=256
+
+    if &diff
+        color symfony
+    else
+        color dante
+    endif
 end
 
 nmap <leader>c1 :colorscheme molokai<cr>
